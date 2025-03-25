@@ -1,7 +1,7 @@
 // pages/Home.jsx
 import React, { useState, useEffect } from 'react';
-import ProductComponent from '../components/ProductComponent';
-import { getProducts } from '../services/productService';
+import ProductComponent from '../../components/ProductComponent';
+import { getProducts } from '../../services/client/productService';
 
 const Home = () => {
   const [products, setProducts] = useState([]);

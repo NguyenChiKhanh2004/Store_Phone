@@ -3,10 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const ModalNotification = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
-
-  // Nếu modal chưa mở, không hiển thị gì cả
   if (!isOpen) return null;
-
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <motion.div
@@ -33,11 +30,10 @@ const ModalNotification = ({ isOpen, onClose }) => {
           <p className="text-gray-600">
             Vui lòng đăng nhập tài khoản Smember để xem ưu đãi và thanh toán dễ dàng hơn.
           </p>
-
           <div className="mt-4 flex justify-center gap-4">
             <button
               onClick={(e) => {
-                e.preventDefault(); // Ngăn chặn reload trang
+                onClose();
                 navigate("/register");
               }}
               className="border border-red-500 text-red-500 px-4 py-2 rounded-lg hover:bg-red-50"
@@ -46,8 +42,8 @@ const ModalNotification = ({ isOpen, onClose }) => {
             </button>
             <button
               onClick={(e) => {
-                e.preventDefault(); // Ngăn chặn reload trang
-                navigate("/login");
+                onClose();
+                navigate("/login");  
               }}
               className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
             >

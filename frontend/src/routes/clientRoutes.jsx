@@ -1,26 +1,18 @@
 import { Routes, Route } from "react-router-dom";
-import PrivateRoute from "./PrivateRoute";
-import About from "../pages/About";
 import Login from "../pages/LoginPage";
-import Home from "../pages/Home";
-import Users from "../pages/Users";
-import Settings from "../pages/Settings";
-import DashboardLayout from "../layouts/DashboardLayout";
+import Home from "../pages/client/HomePage";
+import Register from "../pages/RegisterPage";
+import ProductDetailPage from "../pages/client/ProductDetailPage";
 
 export default function ClientRoutes() {
   return (
-      <Routes>
+    <Routes>
 
-        <Route path="" element={<Home/>} />
-        <Route path="about" element={<About />} />
-        <Route path="login" element={<Login />} />
+      <Route path="" element={<Home />} />
+      <Route path="login" element={<Login />} />
+      <Route path="register" element={<Register />} />
+      <Route path="products/:id" element={<ProductDetailPage />} />
 
-        <Route element={<PrivateRoute />}>
-          <Route path="dashboard" element={<DashboardLayout />}>
-            <Route path="users" element={<Users />} />
-            <Route path="settings" element={<Settings />} />
-          </Route>
-        </Route>
-      </Routes>
+    </Routes>
   );
 }

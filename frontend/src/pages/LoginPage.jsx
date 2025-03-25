@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { setAccessToken } from "../utils/authStorage";
 import { login as authServiceLogin } from "../services/authservices";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -48,7 +47,7 @@ export default function AnimatedLogin() {
           <span key={i} style={{ "--i": i }} className="animated-span" />
         ))}
         <div className="absolute w-[400px]">
-          <h2 className="text-2xl text-center text-[#0ef]">Login</h2>
+          <h2 className="text-2xl text-center text-[#0ef]">ĐĂNG NHẬP</h2>
           <form onSubmit={handleSubmit} className="w-full px-[50px]">
             <div className="relative my-[25px] input-box">
               <input
@@ -95,7 +94,7 @@ export default function AnimatedLogin() {
             </button>
             <div className="text-center mt-4 signup-link">
               <a
-                href="#"
+                href="/register"
                 className="text-base text-[#0ef] font-semibold hover:underline"
               >
                 Đăng ký tài khoản mới

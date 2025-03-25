@@ -1,6 +1,6 @@
 // src/layouts/ClientLayout.jsx
-import Navbar from "../components/Header";
-import Footer from "../pages/Footer";
+import Navbar from "../components/HeaderComponent";
+import Footer from "../components/FooterComponent";
 import { Outlet } from "react-router-dom";
 
 const ClientLayout = () => {

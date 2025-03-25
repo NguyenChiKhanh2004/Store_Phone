@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import Admin from "../layouts/Admin";
+import Admin from "../pages/admin/AdminPage";
+
 
 export default function AdminRoutes() {
   return (

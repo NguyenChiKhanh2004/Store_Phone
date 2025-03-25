@@ -11,9 +11,11 @@ router.get('/', AuthMid.authMiddleware , AuthMid.adminMiddleware ,userController
 // [GET] localhost:3000/user
 router.get('/:id',AuthMid.authMiddleware ,AuthMid.adminMiddleware ,userController.getUsersById);
 
+// Đăng ký
 // [POST] localhost:300/user
-router.post('/',AuthMid.authMiddleware, AuthMid.adminMiddleware, userController.createUsers)
+router.post('/', userController.createUsers)
 
+// Đăng nhập
 //[POST] localhost:3000/user/login
 router.post('/login', userController.login)
 

@@ -6,7 +6,8 @@ const OrdersController = require('../controllers/ordersController');
 // [GET] localhost:3000/orders
 router.get('/', OrdersController.getAllOrders);
 
-// [POST] localhost:300/orders
+// Tạo orders
+// [POST] localhost:3000/orders
 router.post('/', OrdersController.createOrders)
 
 // Cập nhật orders

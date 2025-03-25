@@ -14,11 +14,11 @@ const checkuser = async (username) => {
 }
 
 const createUsers = async (newUsers) => {
-    const { phone, password, email, full_name, role, status } = newUsers;
+    const { phone, password, email, full_name} = newUsers;
     console.log(newUsers);
     const newpass = await bcrypt.hash(password, 10);
-    const query = 'INSERT INTO users (phone, password, email, full_name, role, status) VALUES (?, ?, ?, ?, ?, ?)';
-    const result = await pool.execute(query, [phone, newpass, email, full_name, role, status]);
+    const query = 'INSERT INTO users (phone, password, email, full_name) VALUES (?, ?, ?, ?)';
+    const result = await pool.execute(query, [phone, newpass, email, full_name]);
     return result[0];
 };
 

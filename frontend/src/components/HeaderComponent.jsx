@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import ProtectedLink from "../routes/ProtectedLink";
 
 const Header = () => {
   const { user, logout } = useAuth();
@@ -35,18 +36,10 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Navigation */}
         <nav>
           <ul className="flex space-x-8 text-lg font-medium">
             <li>
-              <Link to="/" className="hover:text-blue-300 transition duration-200">
-                Trang chủ
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard" className="hover:text-blue-300 transition duration-200">
-                Sản phẩm
-              </Link>
+              <ProtectedLink to="/dashboard">Sản phẩm</ProtectedLink>
             </li>
           </ul>
         </nav>
